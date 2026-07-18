@@ -1,5 +1,5 @@
 import express from "express";
-import { updateStudent
+import { addstudent,getstudents,updatestudent ,deletestudent,getstudentbyid
  } from "../controllers/studentController.js";
 // router object
 const router = express.Router();
@@ -9,6 +9,10 @@ const router = express.Router();
 // router.get("/:id",getstudentId);
 // // post method:
 // router.post("/",AddStudent);
-router.put("/students",updateStudent)
+router.put("/:id",updatestudent );
+router.get("/", getstudents);
+router.post("/",addstudent );
+router.delete("/:id",deletestudent);
+router.get("/:id",getstudentbyid)
 // router.delete("/:id",DeleteStudent);
  export default router;
