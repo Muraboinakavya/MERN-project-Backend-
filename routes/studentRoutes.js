@@ -1,6 +1,7 @@
 import express from "express";
-import { addstudent,getstudents,updatestudent ,deletestudent,getstudentbyid ,searchstudents
+import {  addStudent,getStudents, updateStudent ,deleteStudent, getStudentsById ,searchStudents
  } from "../controllers/studentController.js";
+ import upload from  "../middleware/upload.js";
 // router object
 const router = express.Router();
 router.get("/search",searchstudents);
@@ -10,11 +11,12 @@ router.get("/search",searchstudents);
 // router.get("/:id",getstudentId);
 // // post method:
 // router.post("/",AddStudent);
-router.put("/:id",updatestudent );
-router.get("/", getstudents);
-router.post("/",addstudent );
-router.delete("/:id",deletestudent);
-router.get("/:id",getstudentbyid)
+router.put("/:id", updateStudent );
+router.get("/", getStudents);
+// Add student with image upload
+router.post("/",upload.single("image"), addStudent );
+router.delete("/:id",deleteStudent);
+router.get("/:id", getStudentsById)
 // router.delete("/:id",DeleteStudent);
-// router.get("/search",searchstudents);
+ router.get("/search",searchStudents);
  export default router;

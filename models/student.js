@@ -25,6 +25,11 @@ const studentSchema = new mongoose.Schema({
         min:0,
         max:10
     },
+    // Databse stores the image fielname or relative path not image in database
+    image:{
+        type:String,
+        default:""
+    }
 },{
     timestamps:true
 })

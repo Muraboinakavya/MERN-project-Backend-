@@ -10,6 +10,8 @@ const app = express();
 // it convert the Json format into json-object(middleware)
 app.use(express.json());
 app.use(cors());
+// config for loading static files
+app.use("/uploads",express.static("uploads"));
 
 // call connection  
 
