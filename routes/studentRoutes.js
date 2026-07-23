@@ -4,7 +4,7 @@ import {  addStudent,getStudents, updateStudent ,deleteStudent, getStudentsById 
  import upload from  "../middleware/upload.js";
 // router object
 const router = express.Router();
-router.get("/search",searchstudents);
+router.get("/search",searchStudents);
 // // get students  all
 // router.get("/",getStudents);
 // // getStudent by id:
@@ -18,5 +18,5 @@ router.post("/",upload.single("image"), addStudent );
 router.delete("/:id",deleteStudent);
 router.get("/:id", getStudentsById)
 // router.delete("/:id",DeleteStudent);
- router.get("/search",searchStudents);
+//  router.get("/search",searchStudents);
  export default router;
