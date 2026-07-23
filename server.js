@@ -9,7 +9,12 @@ const app = express();
  connectDB();
 // it convert the Json format into json-object(middleware)
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+        origin:process.env.CLIENT_URL,
+        credentials:true
+    })
+);
 // config for loading static files
 app.use("/uploads",express.static("uploads"));
 
